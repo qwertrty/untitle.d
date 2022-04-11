@@ -1,0 +1,11 @@
+body{
+    background-color: aqua;
+}
+.side{
+    text-align: center;
+}
+.fakeimg{
+    display:flex;
+    flex-direction: column;
+
+}
