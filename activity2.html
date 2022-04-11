@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            box-sizing:border-box;
+        }
+        .flex-container{
+            display:flex;
+            flex-direction:column;
+        }
+        .top{
+            margin:10px;
+            padding:20px;
+            font-size:30px;
+            display:flex;
+        }
+        .bottom{
+            display:flex;
+            flex-wrap:wrap;
+        }
+        .main{
+            flex:40px;
+            padding:20px;
+        }
+        .side{
+            flex:60%;
+            desplay:20px;
+            flex-direction:column;
+        }
+        .column{
+            float:left;
+            padding:5px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="flex-container">
+    <div class="top" style="flex-grow:1; padding:20px;">
+        <div class="logo">
+            <img src="IMG_1883.JPG" style="image">
+
+        </div>
+        <div class="nav" style="flex-grow:8; padding:20px:">
+
+        </div>
+        <div class="bottom">
+            <div class="main">
+                <img src="IMG_1759.JPG" class="image">
+            </div>
+            <div class="side">
+                <div class="column">
+                    <h1> opening hour</h1>
+                </div>
+                <div class="column">
+                    <h1>contact us</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
