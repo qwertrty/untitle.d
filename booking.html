@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            font-family: Arial;
+            margin: 0;
+        }
+        .container{
+            float:left;
+            width:50%;
+            display:grid;
+            padding:10px;
+            height:300px;
+           
+            background-color: white;
+        }
+        .customer{
+            display: grid;
+        }
+        .payments{
+            background-color: white;
+            display: grid;
+        }
+        .map{
+            display: grid;
+            float:left;
+            witdth:20%;
+            padding:10px;
+            margin-top: 7px;
+            overflow:hidden;
+            height:500px;
+
+        }
+
+    </style>
+</head>
+<body>
+<div style="background: dodgerblue;padding:5px">
+    <img src="logo.jpg">
+    <h5 style="text-align:right">
+        menu booking about us contact us  feedback  my account
+    </h5>
+</div>
+
+<div class="container">
+    <div class="customer">
+        <h3 >Pickup in hamilton</h3>
+        <h4 style="text-align: center">customer information</h4>
+
+<lable for="firstname">First Name</lable>
+
+<input type="text" name="firstname">
+<br/>
+<lable for="lastname">Last Name</lable>
+
+<input type=""text" name="lastname">
+<br/>
+<lable for="email">emailAddress</lable>
+<input type="email">
+<br/>
+<lable for="tel">contact number</lable>
+<input type="tel">
+<br/>
+<lable for="service">select the service</lable>
+<select id="serviceID" name="serviceName">
+    <option value="deli" selected>delivery</option>
+    <option value="pick">pickup</option>
+</select>
+<br/>
+<lable for="agCheckbox"> agree on the terms and conditions (without selecting this, the user should not allow making the booking/appointment/order)</lable>
+<input type="checkbox" name=""browser choice" value=" agree on the terms and conditions (without selecting this, the user should not allow making the booking/appointment/order" id="agCheckbox">
+    </div>
+
+<div class="payments">
+    <h4 style="text-align: center">Payment</h4>
+
+<br/>
+<lable for="name">name</lable>
+<input type="text" name="name">
+<lable for="card number">card number</lable>
+<input type="number" name="card number">
+<lable for="cvv" >cvv</lable>
+<input type="cvv" name="cvv">
+<lable for="date">card expiration date</lable>
+<input type="date" name="date">
+</div>
+</div>
+<div class="map"> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25221.29804251557!2d175.25754077832653!3d-37.79795424328751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d6d18ab21093faf%3A0x500ef6143a2deb0!2sHamilton%20Lake%2C%20Hamilton!5e0!3m2!1sen!2snz!4v1649756564784!5m2!1sen!2snz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<div style="background: dodgerblue;padding:5px">
+</div>
+
+</body>
+
+</html>
