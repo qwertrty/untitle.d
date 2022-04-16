@@ -4,10 +4,12 @@
     <style>
         *{
             box-sizing:border-box;
+            justify-content: center;
         }
         .flex-container{
             display:flex;
             flex-direction:column;
+            justify-content: center;
         }
         .top{
             margin:10px;
@@ -20,37 +22,61 @@
             flex-wrap:wrap;
         }
         .main{
-            flex:40px;
+            position:absolute;
+            left:20px;
+            top:300px;
+            flex:40%;
             padding:20px;
         }
         .side{
-            flex:60%;
+            position: absolute;
+            right:590px;
             desplay:20px;
+            display:grid;
             flex-direction:column;
+            justify-content: center;
+            top:65px;
         }
         .column{
            float: left;
-
             padding:5px;
         }
+        .header{
+            width: 100%;
+            height: 15vh;
+            background: #333;
+            backdrop-filter: blur(10px);
+            position: relative;
+            left: 10px;
+            right:10px;
+            top: 0;
+            text-align: end;
+            line-height:90px;
+            line-right:55px;
+            cursor:pointer;
+
+        }
+
     </style>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+
+<div class="header">
+    <h3 style="color:yellow;"> Home</h3>
+</div>
 <div class="flex-container">
     <div class="top" style="flex-grow:1; padding:20px;">
         <div class="logo">
-            <img src="<body style="margin: 0px; background: #0e0e0e; height: 100%"><img style="-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://learning.wintec.ac.nz/pluginfile.php/2884959/mod_folder/content/0/Melon" width="322" height="429"></body>
-
+            <img src="IMG_1883.jpg" style="...">
         </div>
-        <div class="nav" style="flex-grow:8; padding:20px:">
-
+        <div class="nav" style="flex-grow:8; padding:20px;">
         </div>
         <div class="bottom">
             <div class="main">
-                <img src="<body style="margin: 0px; background: #0e0e0e; height: 100%"><img style="-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://learning.wintec.ac.nz/pluginfile.php/2884959/mod_folder/content/0/Melon" width="322" height="429"></body>
-            </div>
+                <img src="IMG_1750.JPG" class="image">
+                </div>
             <div class="side">
                 <div class="column">
                     <h3>opening hour</h3>
