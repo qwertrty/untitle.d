@@ -5,116 +5,307 @@
     <title>Title</title>
     <style>
         *{
-            box-sizing: border-box;
+            box-sizing:border-box;
         }
         body{
-            font-family: Arial;
-            margin: 0;
-        }
-
-        .container{
-            float:left;
-            width:60%;
-            display:grid;
-            padding:10px;
-            height:300px;
-           
+            font-family:Arial;
+            padding:0;
+            background-color: #f1f1f1;
+            magin:15px;
 
         }
-        .customer{
-            display: grid;
-        }
-        .payments{
-            background-color: white;
-            display: grid;
-        }
-        .map {
-            grid-row: 1/span 2;
-            line-height: 75px;
-
-            witdth: 30%;
-            height: 100%;
-            padding: 10px;
-            margin-top: 7px;
-            margin-bottom: 0px;
-            overflow: hidden;
-
+        .footer,.header{
+            background-color: #333333;
+            color:white;
+            padding:25px;
+            magin:15px;
 
         }
         .footer{
-            background: aqua;
-            padding:50px;
-            grid-column: 1 / span 3;
-            grid-row: 3;
+            padding:45px;
+            margin-top:15px;
+        }
+        ul{
+            list-style-type:none;
+            margin:0;
+            padding:0;
+            overflow:hidden;
+            background-color: #333333;
+
+        }
+        li{
+            float:right;
+        }
+        li a{
+            display:inline-block;
+            color:white;
+            text-align:center;
+            padding:14px 16px;
+            text-decoration:none;
+        }
+        li a:hover{
+            background-color: #111;
+        }
+        .active{
+            background-color: red;
+        }
+        input[type=reset]{
+            background-color: #04AA6D;
+            color: white;
+            height: 40px;
+            margin: 10%  15% 15% 15% ;
+            cursor: pointer;
+
+
         }
 
+       input[type=text],select,input[type=email],input[type=tel],
+       input[type=number],input[type=cvv],input[type=date]{
+           width:100%;
+           padding:12px;
+           border:1px solid #ccc;
+           border-radius:4px;
+           resize:vertical;
+       }
+       .dropdown-content{
+           display:none;
+           position:absolute;
+           background-color: #f9f9f9;
+           min-width:160px;
+           box-shadow:0px 8px 16px rgba(0,0,0,0.2);
+           padding:12px 16px;
+           z-index:1;
+       }
+        .dropdown:hover .dropdown-content {
+            display:inline-block;
+        }
+        label{
+           padding:12px 12px 12px 0;
+           display:inline-block;
+       }
+       input[type=reset],input[type=submit]{
+           background-color: #04AA6D;
+           color:white;
+           padding:12px 40px;
+           border:none;
+           border-radius:4px;
+           cusor:pointer;
 
 
+       }
+        input[type=reset]:hover,input[type=submit]:hover {
+            background-color: #45a049;
+        }
+        .container{
+            float:left;
+            width:75%;
+        }
+        .map{
+            display:grid;
+            width:610px;
+            height:500px;
+            background-color:#f1f1f1;
+            padding-left:10px;
+            magin-right:0px;
+            margin-top: 70px;
+        }
+        .customer,.payment{
+            background-color: #cccccc;
+            padding:20px;
+            margin-top:20px;
+        }
+        .button{
+            background-color: #cccccc;
+            margin-top:20px;
+            height:150px;
+            padding:0px;
+            text-align: center;
+        }
+        .content{
+            display:flex;
+            flex-wap:nowrap;
+            magin:5px;
+            magin-left:10px;
+        }
 
-
-
-
-
-
+        .content:after{
+            content:"";
+            display:table;
+            clear:both;
+        }
+        .col-25{
+            float:left;
+            width:25%;
+            margin-top:6px;
+        }
+        .col-75,.dropdown{
+            float:left;
+            width:75%;
+            margin-top:6px;
+        }
+        .row:after{
+            content:"";
+            display:table;
+            clear:both;
+        }
+        @media screen and (max-width:600px){
+            .col-25,.col-75,input[type=reset]{
+            width:100%;
+            mardin-top:0;
+        }
     </style>
+
+    <script>
+        function validateForm(){
+            let x=document.forms["myForm"].value;
+            if (x=="")
+            {
+                alert("Forms must be filled out");
+                return false;
+            }
+        }
+    </script>
 </head>
 <body>
-<div class="header" style="background: slategrey;padding:10px">
-    <img src="logo.jpg">
-    <h5 style="text-align:right">
-        menu booking about us contact us  feedback  my account
-    </h5>
+<div class="header">
+<ul>
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+    </ul>
+</ul>
 </div>
-
+<div class="content">
 <div class="container">
-    <div class="customer">
-        <h3 >Pickup in hamilton</h3>
-        <h4 style="text-align: center">customer information</h4>
+    <h2>Pick up in Hamilton</h2>
+    <form name="myForm" action=/action_page.php" onsubmit="return validateForm()" method="post">
+        <div class="customer">
+        <h3 style="text-align: center">customer information</h3>
+        <div class="row">
+            <div class="col-25">
+                <label for="firstname">First Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="firstname" name="firstname" placeholder="Your name..">
+            </div>
+            </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="lastname">Last Name</label>
+            </div>
+            <div class="col-75">
+                <input  type="text" id="lastname" name="lastname"placeholder="Your last name..">
+            </div>
+            </div>
+        <div class="row">
+            <div class="col-25">
+                <lable for="email">email Address</lable>
+                </div>
+            <div class="dropdown">
+                <input type="email" name="email" value="emailk">
+                <div class="dropdown-content">
+                    <p > Email must be correct as it will
+                        be used to send booking confirmation</p>
+                </div>
+            </div>
+            </div>
 
-<lable for="firstname">First Name</lable>
-
-<input type="text" name="firstname">
-<br/>
-<lable for="lastname">Last Name</lable>
-
-<input type=""text" name="lastname">
-<br/>
-<lable for="email">emailAddress</lable>
-<input type="email">
-<br/>
-<lable for="tel">contact number</lable>
-<input type="tel">
-<br/>
-<lable for="service">select the service</lable>
-<select id="serviceID" name="serviceName">
-    <option value="deli" selected>delivery</option>
-    <option value="pick">pickup</option>
-</select>
-<br/>
-<lable for="agCheckbox"> agree on the terms and conditions (without selecting this, the user should not allow making the booking/appointment/order)</lable>
-<input type="checkbox" name=""browser choice" value=" agree on the terms and conditions (without selecting this, the user should not allow making the booking/appointment/order" id="agCheckbox">
+       <div class="row">
+           <div class="col-25">
+               <lable for="tel">contact number</lable>
+               </div>
+           <div class="col-75">
+               <input  type="tel" name="tel">
+           </div>
+           </div>
+        <div class="row">
+            <div class="col-25">
+            <lable for="service">select the service</lable>
+            </div>
+        <div class="col-75">
+            <select id="service" name="serviceName">
+            <option value="deli" >delivery</option>
+            <option value="pick">pickup</option>
+        </select>
+        </div>
+            </div>
+        <div class="row">
+            <div class="col-25">
+                <h5 id="Total"> Total Cost: </h5>
+                </div>
+            <div class="col-75">
+                <h5 id="cost"> $</h5>
+                </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+        <p> agree on the terms and conditions (without selecting this, the user should not allow making the booking/appointment/order)</p>
+                </div>
+            <div class="col-75">
+                <input type="checkbox" name="agree on the terms" value=" agree on the terms ">
+                </div>
+            </div>
+        </div>
+        <div class="payment">
+        <h3 style="text-align: center">Payment</h3><br/>
+        <div class="row">
+            <div class="col-25">
+                <lable for="name">name</lable>
+                </div>
+            <div class="col-75">
+                <input type="text" name="name">
+            </div>
+            </div>
+        <div class="row">
+            <div class="col-25">
+                <lable for="card number">card number</lable>
+                </div>
+            <div class="col-75">
+                <input  type="number" name="card number">
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-25">
+                <lable for="cvv" >cvv</lable>
+                </div>
+            <div class="col-75">
+                <input  type="cvv" name="cvv">
+            </div>
+            </div>
+        <div class="row">
+            <div class="col-25">
+                <lable for="date">card expiration date</lable>
+                </div>
+            <div class="col-75">
+                <input type="date" name="date">
+                </div>
+            </div>
+        </div>
+        <div class="button">
+        <div class="row">
+            <input type="submit" style="width:160px;" value="Confirm Booking">
+            <input type="reset" style="width:160px;" value="reset">
+        </div>
+        </div>
+        </form>
     </div>
-
-<div class="payments">
-    <h4 style="text-align: center">Payment</h4>
-
-<br/>
-<lable for="name">name</lable>
-<input type="text" name="name">
-<lable for="card number">card number</lable>
-<input type="number" name="card number">
-<lable for="cvv" >cvv</lable>
-<input type="cvv" name="cvv">
-<lable for="date">card expiration date</lable>
-<input type="date" name="date">
-</div>
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25221.29804251557!2d175.25754077832653!3d-37.79795424328751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d6d18ab21093faf%3A0x500ef6143a2deb0!2sHamilton%20Lake%2C%20Hamilton!5e0!3m2!1sen!2snz!4v1649756564784!5m2!1sen!2snz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
 </div>
 
 
-<div class="map"> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25221.29804251557!2d175.25754077832653!3d-37.79795424328751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d6d18ab21093faf%3A0x500ef6143a2deb0!2sHamilton%20Lake%2C%20Hamilton!5e0!3m2!1sen!2snz!4v1649756564784!5m2!1sen!2snz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
 
-<div class="footer"></div>
+<div class="footer" ></div>
+
+
+
+
+<script>
+
+
+</script>
 
 
 

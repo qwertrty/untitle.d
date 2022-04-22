@@ -2,23 +2,58 @@
 <html lang="en">
 <head>
     <style>
-        body{
-            background: wight;
-            text-align: center;
-            cusor:pointer;
+        *{
+            box-sizing:border-box;
         }
+        body{
+            font-family:Arial;
+            padding:10px;
+            background-color: #f1f1f1;
+            margin: 0;
+        }
+        .header,.footer{
+            background-color: #333333;
+            color:white;
+            padding:25px;
+            margin:0;
+        }
+        .footer{
+            margin-top:0;
+        }
+        ul{
+            list-style-type:none;
+            margin:0;
+            padding:0;
+            overflow:hidden;
+            background-color: #333333;
 
-        .logo img{
-            float: left;
-            margin-left: 0px 0px 0px 30px;
-            width: 100px;
-            height: 38px;
-            cusor:pointer;
+        }
+        li{
+            float:right;
+        }
+        li a{
+            display:inline-block;
+            color:white;
+            text-align:center;
+            padding:14px 16px;
+            text-decoration:none;
+        }
+        li a:hover{
+            background-color: #111;
+        }
+        .active{
+            background-color: red;
         }
         .container{
-            padding-left: 10px;
-            padding-right: 10px;
-            text-align: center;
+            margin: 2%;
+            grid-column: 2/3;
+            grid-row: 3/4;
+            padding: 2% 4% 4% 4%;
+            display: grid;
+            grid-template-rows: auto auto auto auto;
+            border: 1px solid rgb(170,170,170);
+            background-color: #cccccc;
+
         }
         .row{
             display:flex;
@@ -46,29 +81,43 @@
             background: #333333;
             padding:50px;
         }
+        .footer img{
+            position:relative;
+            left:600px;
+            top:50px;
+        }
 
     </style>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<div class="logo" style=" background:dodgerblue;padding:10px;">
-    <img style="position:relative; left:50px;" src="logo.jpg">
-    <h4  style="text-align:right">menu booking about us contact us feedback  my account</h4>
+<div class="header">
+    <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+    </ul>
 </div>
-<div class="container">
-    <h2 >Abount us</h2>
-    <p>We are a fast food operation company that has been operating for many years, aiming to provide customers with fast, convenient, economical, nutritious and high-quality fast food. Our company has cooperated with many catering companies and has a good reputation. Thank you for choosing our company. We will provide you with satisfactory catering services. You will find the relevant online services on the website.</p>
-</div>
-<h3>Staff members</h3>
-<div class="row">
-
-    <div><img src="big1.jpg"> <p>...</p></div>
-    <div><img src=""> <p>...</p></div>
-    <div><img src=""> <p>...</p></div>
-</div>
+<div class="content">
+    <div class="container">
+        <h2 >Abount us</h2>
+        <p>We are a fast food operation company that has been operating for many years, aiming to provide customers with fast, convenient, economical, nutritious and high-quality fast food. Our company has cooperated with many catering companies and has a good reputation. Thank you for choosing our company. We will provide you with satisfactory catering services. You will find the relevant online services on the website.</p>
     </div>
-<div class="footer">footer</div>
+    <div class="container">
+        <h3>Staff members</h3>
+        <div class="row">
+            <div><img src="big1.jpg"> <p>...</p></div>
+            <div><img src=""> <p>...</p></div>
+            <div><img src=""> <p>...</p></div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+   <img src="photos-gppgle-play-badge.png;">
+</div>
 </div>
 
 
