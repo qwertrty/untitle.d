@@ -175,6 +175,39 @@
             }
         }
     </script>
+    <script>
+        function ValidateEmail(inputText)
+        {
+            var mailformat=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3}+$/;
+            if(inputText.value.match(mailformat))
+            {
+                alert("Valid email address!");
+                document.myForm.email.focus();
+                return true;
+            }
+            else
+            {
+                alert("You have entered an invalid eail address!");
+                document.myForm.email.focus();
+                return false;
+            }
+        }
+    </script>
+    <script>
+        function cardExpiration(){
+            var expiry_month=document.getElementById("expiry_month").value;
+            var expiry_year=dovument.getElementById("expiry_year").value;
+            var today=new Date();
+            var selDate=new Date();
+            if(today.getTime()>selDate.setFillYear(expiry_year,expiry_month)){
+                document.write("<br/>"+"expiry month and year is before today month and year.");
+                document.date.focus();
+                return false;
+            }else{
+                it is fine.
+                document.date.focus();
+            }
+    </script>
 </head>
 <body>
 <div class="header">
@@ -218,7 +251,7 @@
                 <lable for="email">email Address</lable>
                 </div>
             <div class="dropdown">
-                <input type="email" name="email" value="email">
+                <input type="text" name="email" value="email">
                 <div class="dropdown-content">
                     <p > Email must be correct as it will
                         be used to send booking confirmation</p>
@@ -299,7 +332,7 @@
         </div>
         <div class="button">
         <div class="row">
-            <input type="submit" style="width:160px;" value="submit">
+            <input type="submit" style="width:160px;" value="submit"  >
             <input type="reset" style="width:160px;" value="reset">
         </div>
         </div>
@@ -315,7 +348,7 @@
         <img src="https://lh3.googleusercontent.com/_2zdr0kd3S1wl0ptvJwXeahx1BhL35oD-L3rxyiwcg_WUx7nRnyridI2Jjrt_CsNVzVqWLx6MCPwOP73PRVdO-K9o0eM603vGNTND1DYE--GO8YmS6_RbZcG5ACJZ4f24hiwegv7UC6wtGdRJPQPTiQMiCfD2kBTt4ujy4TXxdcH_B7pYrAqe7zkEPbcpaBQ0PC3MUBNvHZaBJRAqIGVEdFApavrq8Tf0v_EPFcdBhoDsLbcr4syg4-WtEwYFZgrPm4FXjTJh2iRfEIi4TNte6gQsDpJyk5fhaTvY5qkKcprKC9uuz5Gkisv5A3oZ9CytvAVFaRFeGuqNfJWTGNvTZqvSs6mop_yDrItkUEzmUmC8CTn2iIaQgjJtw8qgYhUzWEmilkpiZyiTa6sn2bobaTH0d0V52q1CBdG849up3N0I86n41iPvI32g6QY2mE_8iy7DNkHVwrTGBNO2o8DueS6j59f9J3x6hilfsUv0mbyb41oKsK1_LQ8Yn9zCnXGybogtVKcbSS5azMFzUXVbN0g7gyNEo5Y9lMi_vjNaZ_GuDYZOPdPMhZr-3QwJUV-ZjKl4MjBRTeD_zWSQ_thzvVeQ6Aj56DKPpmPvtzRf1Jl58xRx_fL-jkuyptFp1ckwJ0B7aHjvg8wAyZyxaWiNI-tAUJBjNMjJJcvD1ykTrErNS4hJ5RCGzK492FCECOniJXAt4BWbdjGeRb4IzBRWnyFPTZ73xP_crNDHVtKWk6t0S10kszmDEa_sELcBA=w840-h47-no?authuser=0" style="float:right;">
     </div>
 </div>
-<script src="myScript.is"></script>
+
 </body>
 
 </html>
