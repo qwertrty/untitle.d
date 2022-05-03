@@ -19,7 +19,7 @@
             background-color:black;
             color:white;
             padding:0;
-            margin-top:-110px;
+            margin-top:-125px;
         }
         .header h1{
             font-family:sofia,sens-serif;
@@ -27,7 +27,7 @@
             position:relative;
             left:200px;
             top:80px;
-       }
+        }
         .footer{
             background-color:black;
             color:white;
@@ -70,40 +70,40 @@
 
         }
 
-       input[type=text],select,input[type=email],input[type=tel],
-       input[type=number],input[type=cvv],input[type=date]{
-           width:100%;
-           padding:12px;
-           border:1px solid #ccc;
-           border-radius:4px;
-           resize:vertical;
-       }
-       .dropdown-content{
-           display:none;
-           position:absolute;
-           background-color: #f9f9f9;
-           min-width:160px;
-           box-shadow:0px 8px 16px rgba(0,0,0,0.2);
-           padding:12px 16px;
-           z-index:1;
-       }
+        input[type=text],select,input[type=email],input[type=tel],
+        input[type=number],input[type=cvv],input[type=date]{
+            width:100%;
+            padding:12px;
+            border:1px solid #ccc;
+            border-radius:4px;
+            resize:vertical;
+        }
+        .dropdown-content{
+            display:none;
+            position:absolute;
+            background-color: #f9f9f9;
+            min-width:160px;
+            box-shadow:0px 8px 16px rgba(0,0,0,0.2);
+            padding:12px 16px;
+            z-index:1;
+        }
         .dropdown:hover .dropdown-content {
             display:inline-block;
         }
         label{
-           padding:12px 12px 12px 0;
-           display:inline-block;
-       }
-       input[type=reset],input[type=submit]{
-           background-color: #04AA6D;
-           color:white;
-           padding:12px 40px;
-           border:none;
-           border-radius:4px;
-           cusor:pointer;
+            padding:12px 12px 12px 0;
+            display:inline-block;
+        }
+        input[type=reset],input[type=submit]{
+            background-color: #04AA6D;
+            color:white;
+            padding:12px 40px;
+            border:none;
+            border-radius:4px;
+            cusor:pointer;
 
 
-       }
+        }
         input[type=reset]:hover,input[type=submit]:hover {
             background-color: #45a049;
         }
@@ -149,7 +149,7 @@
             width:25%;
             margin-top:6px;
         }
-        .col-75,.dropdown{
+        .col-75,.dropdown,.col-75-s{
             float:left;
             width:75%;
             margin-top:6px;
@@ -161,13 +161,14 @@
         }
         @media screen and (max-width:600px){
             .col-25,.col-75,input[type=reset]{
-            width:100%;
-            mardin-top:0;
-        }
+                width:100%;
+                mardin-top:0;
+            }
     </style>
     <script>
         function requiredField(){
             let x=document.forms["myForm"]["lastname"].value;
+            //let y=document.forms["myForm"]["firstname"].value;
             if (x=="")
             {
                 alert("Forms must be filled out");
@@ -176,166 +177,183 @@
         }
     </script>
     <script>
-        function ValidateEmail(inputText)
+        function ValidateEmail()
         {
-            var mailformat=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3}+$/;
-            if(inputText.value.match(mailformat))
+            let email_regexp = /^\w+@[a-z]+(\.[a-z]+)+$/;
+            let email=document.myForm.email;
+            let valid = email_regexp.test(email.value);
+            if(!valid)
             {
-                alert("Valid email address!");
-                document.myForm.email.focus();
-                return true;
+                alert("You have entered an invalid email address!");
+                return false;
             }
             else
             {
-                alert("You have entered an invalid eail address!");
-                document.myForm.email.focus();
-                return false;
+                return true;
             }
         }
     </script>
     <script>
-        function cardExpiration(){
-            var expiry_month=document.getElementById("expiry_month").value;
-            var expiry_year=dovument.getElementById("expiry_year").value;
-            var today=new Date();
-            var selDate=new Date();
-            if(today.getTime()>selDate.setFillYear(expiry_year,expiry_month)){
-                document.write("<br/>"+"expiry month and year is before today month and year.");
+        function cardExpiration() {
+            let expiry_month = document.forms["myForm"]["date"].value;
+            let expiry_year = document.forms["myForm"]["date"].value;
+            //let expiry_month = document.getElementById("date").value;
+            //let expiry_year = document.getElementById("date").value;
+            let today = new Date();
+            let selDate = new Date();
+            if (today.getTime() > selDate.setFullYear(expiry_month, expiry_year)) {
+                document.write("<br/>" + "expiry month and year is before today month and year.");
                 document.date.focus();
                 return false;
-            }else{
-                it is fine.
+            } else {
+                alert("it is fine");
                 document.date.focus();
+                return true;
             }
+        }
+    </script>
+    <script>
+        function formDataIsValid()
+        {
+            let form_is_valid  = true;
+            if (!requiredField()) {
+                form_is_valid  = false;
+            }
+            if (!ValidateEmail()) {
+                form_is_valid  = false;
+            }
+            if(!cardExpiration()){
+                form_is_valid = false;
+            }
+            return form_is_valid;
+        }
+
     </script>
 </head>
 <body>
+//<?php  include("header.php");?>
 <div class="header">
     <h1 class="fast food">Fast Food</h1>
     <div class="logo">
-        <img src="https://lh3.googleusercontent.com/LYzGWqWLpsDA141gDoR0uN-57HgHY3s2woUhcU3jVu0-EGB274jRWxMTn5-ASmMIEOVwxKsTRTE18osII8bCdI0EgSyvdl7rJTenXGHHjSlSUTgJqKygt2YEbUZ0Wr1PP2yu22ite5Bxpyb1z5__sIZqP8-4yU5P5WglSzkaIsvaQwqxr7OjngwZZN6RXR0LfK1Da0_kolgghAmWaZusefsjEwbE6jcB4i_BNTgMYAlwxlm5pPIYDix_rPh9J8aq7g7OI92YXavoM8gniXy9L9lg_AwT5rGy97YEeEQ-kNVv8Qnk4tvLM_FuiheyKCeAvMcVTk0N2jKyP6PQfbxAk5yh0haVQivKyjFfj7_HLLiJCQ-dGn5Y_57I5fs7JZt2zArew29myik3A3OzI3K1r9xyyG59fAA5JYkh3kxxzPd1urI3TASG_ZJq0RZULKGnaY9WcKohYsdS5Q0jo7HjalM3kdYxGUf0hDHJT8XEOyFcSz_OWj4oJdxg6kEnePhQgwA_5iRJE76-H3_GSLXCqxGXrgIHb6SycYm8rRIss81yZM-uuUJfhvO0lLjI47zCShVaZm8-jO1ZBlm1NXLzbcAev51rVJu0rRBZl5eiewDUjlme9aE74Wp78SE9muPK5WdhXScaHdRGm-IXQmz-jHgH1vwYSaSjtfvqhThoSxO3apbZ1Fr35qUSLkIkU5I2uMYF18G7e0c7DxemlO6nARFwa4z2wov1WmG452dRn_0KEpr4G1fnAo3tApr42g=w667-h625-no?authuser=0"style="width:60px; height:30px; margin-top:0; margin-left:2px;" alt="logo">
+        <a  href=""><img src="https://lh3.googleusercontent.com/LYzGWqWLpsDA141gDoR0uN-57HgHY3s2woUhcU3jVu0-EGB274jRWxMTn5-ASmMIEOVwxKsTRTE18osII8bCdI0EgSyvdl7rJTenXGHHjSlSUTgJqKygt2YEbUZ0Wr1PP2yu22ite5Bxpyb1z5__sIZqP8-4yU5P5WglSzkaIsvaQwqxr7OjngwZZN6RXR0LfK1Da0_kolgghAmWaZusefsjEwbE6jcB4i_BNTgMYAlwxlm5pPIYDix_rPh9J8aq7g7OI92YXavoM8gniXy9L9lg_AwT5rGy97YEeEQ-kNVv8Qnk4tvLM_FuiheyKCeAvMcVTk0N2jKyP6PQfbxAk5yh0haVQivKyjFfj7_HLLiJCQ-dGn5Y_57I5fs7JZt2zArew29myik3A3OzI3K1r9xyyG59fAA5JYkh3kxxzPd1urI3TASG_ZJq0RZULKGnaY9WcKohYsdS5Q0jo7HjalM3kdYxGUf0hDHJT8XEOyFcSz_OWj4oJdxg6kEnePhQgwA_5iRJE76-H3_GSLXCqxGXrgIHb6SycYm8rRIss81yZM-uuUJfhvO0lLjI47zCShVaZm8-jO1ZBlm1NXLzbcAev51rVJu0rRBZl5eiewDUjlme9aE74Wp78SE9muPK5WdhXScaHdRGm-IXQmz-jHgH1vwYSaSjtfvqhThoSxO3apbZ1Fr35qUSLkIkU5I2uMYF18G7e0c7DxemlO6nARFwa4z2wov1WmG452dRn_0KEpr4G1fnAo3tApr42g=w667-h625-no?authuser=0"style="width:60px; height:30px; margin-top:0; margin-left:2px;" alt="logo">
+        </a>
     </div>
     <ul>
-    <li><a href="#My Account" class="active">My Account</a></li>
-    <li><a href="#Feedback Galery">Feedback Galery</a></li>
-    <li><a href="#Contact Us">Contact Us</a></li>
-    <li><a href="#About Us">About Us</a></li>
-    <li><a href="Booking">Booking</a></li>
-    <li><a href="Menu">Menu</a></li>
+        <li><a href="#My Account" class="active">My Account</a></li>
+        <li><a href="#Feedback Galery">Feedback Galery</a></li>
+        <li><a href="#Contact Us">Contact Us</a></li>
+        <li><a href="https://qwertrty.github.io/index.html">About Us</a></li>
+        <li><a href="Booking">Booking</a></li>
+        <li><a href="Menu">Menu</a></li>
     </ul>
 </div>
 <div class="content">
-<div class="container">
-    <h2>Pick up in Hamilton</h2>
-    <form name="myForm" action="/action_page.php" onsubmit="return requiredField()" method="post">
-        <div class="customer">
-        <h3 style="text-align: center">customer information</h3>
-        <div class="row">
-            <div class="col-25">
-                <label for="firstname">First Name</label>
-            </div>
-            <div class="col-75">
-                <input type="text" id="firstname" name="firstname" placeholder="Your name..">
-            </div>
-            </div>
-        <div class="row">
-            <div class="col-25">
-                <label for="lastname">Last Name</label>
-            </div>
-            <div class="col-75">
-                <input  type="text" id="lastname" name="lastname" placeholder="Your last name..">
-            </div>
-            </div>
-        <div class="row">
-            <div class="col-25">
-                <lable for="email">email Address</lable>
+    <div class="container">
+        <h2>Pick up in Hamilton</h2>
+        <form name="myForm" action="/action_page.php" onsubmit="return formDataIsValid()" method="post">
+            <div class="customer">
+                <h3 style="text-align: center">customer information</h3>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="firstname">First Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="firstname" name="firstname" placeholder="Your name..">
+                    </div>
                 </div>
-            <div class="dropdown">
-                <input type="text" name="email" value="email">
-                <div class="dropdown-content">
-                    <p > Email must be correct as it will
-                        be used to send booking confirmation</p>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="lastname">Last Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input  type="text" id="lastname" name="lastname" placeholder="Your last name..">
+                    </div>
                 </div>
-            </div>
-            </div>
+                <div class="row">
+                    <div class="col-25">
+                        <lable for="email">email Address</lable>
+                    </div>
+                    <div class="dropdown">
+                        <input type="text" name="email" value="email">
+                        <div class="dropdown-content">
+                            <p > Email must be correct as it will
+                                be used to send booking confirmation</p>
+                        </div>
+                    </div>
+                </div>
 
-       <div class="row">
-           <div class="col-25">
-               <lable for="tel">contact number</lable>
-               </div>
-           <div class="col-75">
-               <input  type="tel" name="tel">
-           </div>
-           </div>
-        <div class="row">
-            <div class="col-25">
-            <lable for="service">select the service</lable>
-            </div>
-        <div class="col-75">
-            <select id="service" name="serviceName">
-            <option value="deli" >delivery</option>
-            <option value="pick">pickup</option>
-        </select>
-        </div>
-            </div>
-        <div class="row">
-            <div class="col-25">
-                <h5 id="Total"> Total Cost: </h5>
+                <div class="row">
+                    <div class="col-25">
+                        <lable for="tel">contact number</lable>
+                    </div>
+                    <div class="col-75">
+                        <input  type="tel" name="tel">
+                    </div>
                 </div>
-            <div class="col-75">
-                <h5 id="cost"> $</h5>
+                <div class="row">
+                    <div class="col-25">
+                        <lable for="service">select the service</lable>
+                    </div>
+                    <div class="dropdown">
+                        <select id="service" name="serviceName">
+                            <option value="deli" >delivery</option>
+                            <option value="pick">pickup</option>
+                        </select>
+                        <div class="dropdown-content">
+                            <h5 id="Total"> Total Cost: ...$</h5>
+                        </div>
+                    </div>
                 </div>
-        </div>
-        <div class="row">
-            <div class="col-25">
-        <p> agree on the terms and conditions (without selecting this, the user should not allow making the booking/appointment/order)</p>
-                </div>
-            <div class="col-75">
-                <input type="checkbox" name="agree on the terms" value=" agree on the terms ">
+                <div class="row">
+                    <div class="col-25">
+                        <p style=" text-align: justify; width:670px;"> agree on the terms and conditions (without selecting this, the user should not allow making the booking/appointment/order)</p>
+                        <div class="col-75"  >
+                            <input type="checkbox" name="agree on the terms" value=" agree on the terms ">
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="payment">
-        <h3 style="text-align: center">Payment</h3><br/>
-        <div class="row">
-            <div class="col-25">
-                <lable for="name">name</lable>
+            <div class="payment">
+                <h3 style="text-align: center">Payment</h3><br/>
+                <div class="row">
+                    <div class="col-25">
+                        <lable for="name">name</lable>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="name">
+                    </div>
                 </div>
-            <div class="col-75">
-                <input type="text" name="name">
-            </div>
-            </div>
-        <div class="row">
-            <div class="col-25">
-                <lable for="card number">card number</lable>
+                <div class="row">
+                    <div class="col-25">
+                        <lable for="card number">card number</lable>
+                    </div>
+                    <div class="col-75">
+                        <input  type="number" name="card number">
+                    </div>
                 </div>
-            <div class="col-75">
-                <input  type="number" name="card number">
+                <div class="row">
+                    <div class="col-25">
+                        <lable for="cvv" >cvv</lable>
+                    </div>
+                    <div class="col-75">
+                        <input  type="cvv" name="cvv">
+                    </div>
                 </div>
-            </div>
-        <div class="row">
-            <div class="col-25">
-                <lable for="cvv" >cvv</lable>
-                </div>
-            <div class="col-75">
-                <input  type="cvv" name="cvv">
-            </div>
-            </div>
-        <div class="row">
-            <div class="col-25">
-                <lable for="date">card expiration date</lable>
-                </div>
-            <div class="col-75">
-                <input type="date" name="date">
+                <div class="row">
+                    <div class="col-25">
+                        <lable for="date">card expiration date</lable>
+                    </div>
+                    <div class="col-75">
+                        <input type="date" name="date">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="button">
-        <div class="row">
-            <input type="submit" style="width:160px;" value="submit"  >
-            <input type="reset" style="width:160px;" value="reset">
-        </div>
-        </div>
+            <div class="button">
+                <div class="row">
+                    <input type="submit" style="width:160px;" value="submit"  >
+                    <input type="reset" style="width:160px;" value="reset">
+                </div>
+            </div>
         </form>
     </div>
     <div class="map">
@@ -344,7 +362,8 @@
 </div>
 <div class="footer" >
     <div class="logo">
-        <img src="https://lh3.googleusercontent.com/LYzGWqWLpsDA141gDoR0uN-57HgHY3s2woUhcU3jVu0-EGB274jRWxMTn5-ASmMIEOVwxKsTRTE18osII8bCdI0EgSyvdl7rJTenXGHHjSlSUTgJqKygt2YEbUZ0Wr1PP2yu22ite5Bxpyb1z5__sIZqP8-4yU5P5WglSzkaIsvaQwqxr7OjngwZZN6RXR0LfK1Da0_kolgghAmWaZusefsjEwbE6jcB4i_BNTgMYAlwxlm5pPIYDix_rPh9J8aq7g7OI92YXavoM8gniXy9L9lg_AwT5rGy97YEeEQ-kNVv8Qnk4tvLM_FuiheyKCeAvMcVTk0N2jKyP6PQfbxAk5yh0haVQivKyjFfj7_HLLiJCQ-dGn5Y_57I5fs7JZt2zArew29myik3A3OzI3K1r9xyyG59fAA5JYkh3kxxzPd1urI3TASG_ZJq0RZULKGnaY9WcKohYsdS5Q0jo7HjalM3kdYxGUf0hDHJT8XEOyFcSz_OWj4oJdxg6kEnePhQgwA_5iRJE76-H3_GSLXCqxGXrgIHb6SycYm8rRIss81yZM-uuUJfhvO0lLjI47zCShVaZm8-jO1ZBlm1NXLzbcAev51rVJu0rRBZl5eiewDUjlme9aE74Wp78SE9muPK5WdhXScaHdRGm-IXQmz-jHgH1vwYSaSjtfvqhThoSxO3apbZ1Fr35qUSLkIkU5I2uMYF18G7e0c7DxemlO6nARFwa4z2wov1WmG452dRn_0KEpr4G1fnAo3tApr42g=w667-h625-no?authuser=0"style="width:60px; height:30px; margin-top:-50px; margin-left:-30px;" alt="logo">
+        <a  href=""><img src="https://lh3.googleusercontent.com/LYzGWqWLpsDA141gDoR0uN-57HgHY3s2woUhcU3jVu0-EGB274jRWxMTn5-ASmMIEOVwxKsTRTE18osII8bCdI0EgSyvdl7rJTenXGHHjSlSUTgJqKygt2YEbUZ0Wr1PP2yu22ite5Bxpyb1z5__sIZqP8-4yU5P5WglSzkaIsvaQwqxr7OjngwZZN6RXR0LfK1Da0_kolgghAmWaZusefsjEwbE6jcB4i_BNTgMYAlwxlm5pPIYDix_rPh9J8aq7g7OI92YXavoM8gniXy9L9lg_AwT5rGy97YEeEQ-kNVv8Qnk4tvLM_FuiheyKCeAvMcVTk0N2jKyP6PQfbxAk5yh0haVQivKyjFfj7_HLLiJCQ-dGn5Y_57I5fs7JZt2zArew29myik3A3OzI3K1r9xyyG59fAA5JYkh3kxxzPd1urI3TASG_ZJq0RZULKGnaY9WcKohYsdS5Q0jo7HjalM3kdYxGUf0hDHJT8XEOyFcSz_OWj4oJdxg6kEnePhQgwA_5iRJE76-H3_GSLXCqxGXrgIHb6SycYm8rRIss81yZM-uuUJfhvO0lLjI47zCShVaZm8-jO1ZBlm1NXLzbcAev51rVJu0rRBZl5eiewDUjlme9aE74Wp78SE9muPK5WdhXScaHdRGm-IXQmz-jHgH1vwYSaSjtfvqhThoSxO3apbZ1Fr35qUSLkIkU5I2uMYF18G7e0c7DxemlO6nARFwa4z2wov1WmG452dRn_0KEpr4G1fnAo3tApr42g=w667-h625-no?authuser=0"style="width:60px; height:30px; margin-top:-50px; margin-left:-30px;" alt="logo">
+        </a>
         <img src="https://lh3.googleusercontent.com/_2zdr0kd3S1wl0ptvJwXeahx1BhL35oD-L3rxyiwcg_WUx7nRnyridI2Jjrt_CsNVzVqWLx6MCPwOP73PRVdO-K9o0eM603vGNTND1DYE--GO8YmS6_RbZcG5ACJZ4f24hiwegv7UC6wtGdRJPQPTiQMiCfD2kBTt4ujy4TXxdcH_B7pYrAqe7zkEPbcpaBQ0PC3MUBNvHZaBJRAqIGVEdFApavrq8Tf0v_EPFcdBhoDsLbcr4syg4-WtEwYFZgrPm4FXjTJh2iRfEIi4TNte6gQsDpJyk5fhaTvY5qkKcprKC9uuz5Gkisv5A3oZ9CytvAVFaRFeGuqNfJWTGNvTZqvSs6mop_yDrItkUEzmUmC8CTn2iIaQgjJtw8qgYhUzWEmilkpiZyiTa6sn2bobaTH0d0V52q1CBdG849up3N0I86n41iPvI32g6QY2mE_8iy7DNkHVwrTGBNO2o8DueS6j59f9J3x6hilfsUv0mbyb41oKsK1_LQ8Yn9zCnXGybogtVKcbSS5azMFzUXVbN0g7gyNEo5Y9lMi_vjNaZ_GuDYZOPdPMhZr-3QwJUV-ZjKl4MjBRTeD_zWSQ_thzvVeQ6Aj56DKPpmPvtzRf1Jl58xRx_fL-jkuyptFp1ckwJ0B7aHjvg8wAyZyxaWiNI-tAUJBjNMjJJcvD1ykTrErNS4hJ5RCGzK492FCECOniJXAt4BWbdjGeRb4IzBRWnyFPTZ73xP_crNDHVtKWk6t0S10kszmDEa_sELcBA=w840-h47-no?authuser=0" style="float:right;">
     </div>
 </div>
