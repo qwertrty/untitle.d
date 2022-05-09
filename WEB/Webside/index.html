@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeaFood</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid">
+            <!-- company logo and name -->
+            <h1 class="company">
+                <a href="./index.html" title="SeaFood logo" class="navbar-brand">
+                        <img src="../img/logo.png">
+                        <div class="companyname">SeaFood</div>
+                </a>
+            </h1>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                
+                <div class="navbar-nav ml-auto" >
+                    <!-- navbar link -->
+                    <a href="./Menu.html"  class="nav-item nav-link active">MANU</a>
+                    <a href="./Booking.html"  class="nav-item nav-link active">BOOKING</a>
+                    <a href="./Aboutus.html"  class="nav-item nav-link active">ABOUT US</a>
+                    <a href="./Contactus.html" class="nav-item nav-link active">CONTACT US</a>
+                    <a href="./index.html"  class="nav-item nav-link active">MY ACCOUNT</a>
+                </div>
+            </div>    
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+
+        <div class="container-fluid">
+
+            <div class="row">
+                <!-- slideshow -->
+                <div class="wrap">
+                    <ul class="list">
+                        <li class="item active"><img src="../img/Home1.png"></li>
+                        <li class="item"><img src="../img/Breakfast.png"></li>
+                        <li class="item"><img src="../img/Home3.png"></li>
+                        <li class="item"><img src="../img/combo.png"></li>
+                        <li class="item"><img src="../img/Home2.png"></li>
+                    </ul>
+                    <ul class="pointList">
+                        <li class="point active" data-index="0"></li>
+                        <li class="point" data-index="1"></li>
+                        <li class="point" data-index="2"></li>
+                        <li class="point" data-index="3"></li>
+                        <li class="point" data-index="4"></li>
+                    </ul>
+                    <button type="button" class="btn" id="goPre"><</button>
+                    <button type="button" class="btn" id="goNext">></button>
+                    <h3 class="imagetext">
+                        Special promotion
+                    </h3>
+                </div>
+
+                <!-- Text for company -->
+                <div class="hero-text">
+                    <h3>Our service goals are health, safety and speed.</h3>
+                    <p> We are a company that provides food courier services, providing customers with comfortable and assured door-to-door service at the cheapest price. Prices shown are only local to the store of your choice.
+                    Customers can customize their own orders, and if the customer requests, we provide allergen-free, vegan food.</p>
+                </div>
+                <div class="column middle">
+                    <div class="hero-image1">
+                        <img src="../img/Home2.png" width="500" height="400" >
+                    </div>
+                    <div class="hero-image2">
+                        <img src="../img/Home3.png" width="500" height="400">
+                    </div>
+                    <div class="hero-image3">
+                        <img src="../img/Home4.png" width="500" height="400">
+                    </div>
+                </div>
+                <!-- <div class="column middle">
+                    <div class="hero-image4">
+                        <img src="../img/McFlurry.png" width="500" height="400" >
+                    </div>
+                    <div class="hero-image5">
+                        <img src="../img/fishC.png" width="500" height="400" >
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer" id="contact" name="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- information company -->
+                            <div class="footer-contact">
+                                <h2>For more information contact us</h2>
+                                <p href="#"><i class="fa fa-map-marker-alt">&nbsp;&nbsp;Map</i></p>
+                                <p href="https://www.wintec.ac.nz/"><i class="fa fa-envelope"></i>wintec.ac.nz</p>
+                            </div>
+                        </div>
+                        <!-- go back link -->
+                        <div class="col-md-6">
+                            <div class="footer-link">
+                                <h2>Go back to</h2>
+                                <a href="index.html">Home</a>
+                                <a href="Menu.html">Manu</a>
+                                <a href="aboutus.html">About Us</a>
+                                <a href="contactus.html">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- email -->
+                <div class="col-lg-5">
+                    <div class="footer-newsletter">
+                        <h2>Email us</h2>
+                        <div class="form">
+                            <input class="form-control" placeholder="Email goes here">
+                            <button class="btn">Sub</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- Slideshow js -->
+    <script type="text/javascript">
+        var items = document.getElementsByClassName("item");
+        var points = document.getElementsByClassName("point");
+        var goPreBtn = document.getElementById('goPre');
+        var goNextBtn = document.getElementById('goNext');
+
+        var index = 0;//index表示第几张图片在展示，  第index张图片有acitve这个类。
+
+        var clearActive = function(){
+            for(var i = 0; i < items.length; i++){
+                items[i].className = 'item';
+            }
+            for(var i = 0; i < items.length; i++){
+                points[i].className = 'point';
+            }
+        }
+        var goIndex = function(){
+            clearActive();
+            console.log(index)
+            items[index].className = 'item active';
+            points[index].className = 'point active';
+        }
+
+        var goNext = function(){
+            if(index < 4){
+                index ++;
+            }else{
+                index = 0;
+            }
+            
+            goIndex();
+        }
+
+        var goPre = function(){
+            if (index == 0){
+                index = 4;
+            }else{
+                index --;
+            }
+                goIndex();
+        }
+        goNextBtn.addEventListener('click',function(){
+            goNext();
+        })
+        goPreBtn.addEventListener('click',function(){
+            goPre();
+        })
+        for(var i = 0; i < points.length ; i++){
+            points[i].addEventListener('click',function(){
+                var pointIndex =  this.getAttribute('data-index');
+                index = pointIndex;
+                goIndex();
+            })
+        }
+
+        
+    </script>
+</body>
+
+</html>
