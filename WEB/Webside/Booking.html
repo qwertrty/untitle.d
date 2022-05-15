@@ -5,262 +5,21 @@
     <title>Title</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/bookingCss.css" rel="stylesheet">
+    <script src="../js/requiredField.js"></script>
+    <script src="../js/ValidateEmail.js"></script>
+    <script src="../js/cardExpiration.js"></script>
+    <script src="../js/formDataIsValid.js"></script>
 
-    <style>
-        *{
-            box-sizing:border-box;
-        }
-        body{
-            font-family:Arial;
-            padding:0;
-            background-color: #f1f1f1;
-            magin:15px;
-
-        }
-
-        .header h1{
-            font-family:sofia,sens-serif;
-            font-size:50px;
-            position:relative;
-            left:200px;
-            top:80px;
-        }
-
-        ul{
-            list-style-type:none;
-            margin:0;
-            padding:0;
-            overflow:hidden;
-            background-color:black;
-
-        }
-        li{
-            float:right;
-        }
-        li a{
-            display:inline-block;
-            color:white;
-            text-align:center;
-            padding:14px 16px;
-            text-decoration:none;
-        }
-        li a:hover{
-            background-color: #111;
-        }
-        input[type=reset]{
-            background-color: #04AA6D;
-            color: white;
-            height: 40px;
-            margin: 8%  15% 15% 15% ;
-            cursor: pointer;
-
-
-        }
-
-        input[type=text],select,input[type=email],input[type=tel],
-        input[type=number],input[type=cvv],input[type=date]{
-            width:100%;
-            padding:12px;
-            border:1px solid #ccc;
-            border-radius:4px;
-            resize:vertical;
-        }
-        .dropdown-content{
-            display:none;
-            position:absolute;
-            background-color:dodgerblue;
-            min-width:160px;
-            box-shadow:0px 8px 16px rgba(0,0,0,0.2);
-            border-radius:10px;
-            padding:12px 16px;
-            z-index:1;
-        }
-        .dropdown:hover .dropdown-content {
-            display:inline-block;
-
-        }
-        label{
-            padding:12px 12px 12px 0;
-            display:inline-block;
-        }
-        input[type=reset],input[type=submit]{
-            background-color: #04AA6D;
-            color:white;
-            padding:12px 40px;
-            border:none;
-            border-radius:4px;
-            cusor:pointer;
-
-
-        }
-        input[type=reset]:hover,input[type=submit]:hover {
-            background-color: #45a049;
-        }
-        .container{
-            float:left;
-            margin: auto;
-            width:75%;
-        }
-
-        .customer,.payment{
-            background-color:darkred;
-            padding:20px;
-            margin-top:5px;
-        }
-        .button{
-            background-color: darkred;
-            margin-top:5px;
-            height:150px;
-            padding:0px;
-            text-align: center;
-        }
-        .content{
-            display:flex;
-            flex-wap:nowrap;
-            magin:5px;
-            magin-left:10px;
-        }
-        .content{
-            margin-top:230px;
-        }
-
-        .content:after{
-            content:"";
-            display:table;
-            clear:both;
-        }
-        .col-25{
-            float:left;
-            width:25%;
-            margin-top:6px;
-        }
-        .col-75,.dropdown,.col-75-s{
-            float:left;
-            width:75%;
-            margin-top:6px;
-        }
-        .roww:after{
-            content:"";
-            display:table;
-            clear:both;
-        }
-        @media screen and (max-width:600px){
-            .col-25,.col-75,input[type=reset]{
-                width:100%;
-                mardin-top:0;
-            }
-    </style>
-    <script>
-        function requiredField(){
-            let lastname=document.forms["myForm"]["lastname"].value;
-            /*let firstname=document.forms["myForm"]["firstname"].value;
-            let email=document.forms["myForm"]["email"].value;
-            let tel=document.forms["myForm"]["tel"].value;
-            let service=document.forms["myForm"]["service"].value;
-            let name=document.forms["myForm"]["name"].value;
-            let number=document.forms["myForm"]["number"].value;
-            let cvv=document.forms["myForm"]["cvv"].value;
-            let date=document.forms["myForm"]["date"].value;*/
-            if (lastname=="")
-            {
-                alert("Forms must be filled out");
-                return false;
-            }/*
-            if (firstname=="") {
-                alert("Please enter a first name");
-                return false;
-            }
-
-            if (email=="") {
-                alert("Please enter a email");
-                return false;
-            }if (tel=="") {
-                alert("Please enter a tel number");
-                return false;
-            }
-            if (name=="") {
-                alert("Please enter a  name");
-                return false;
-            }
-            if (number=="") {
-                alert("Please enter a card number");
-                return false;
-            }
-            if (cvv=="") {
-                alert("Please enter a cvv");
-                return false;
-            }
-            if (date=="") {
-                alert("Please enter a date");
-                return false;
-            }else{
-                return true;
-            }*/
-
-        }
-    </script>
-    <script>
-        function ValidateEmail()
-        {
-            let email_regexp = /^\w+@[a-z]+(\.[a-z]+)+$/;
-            let email=document.myForm.email;
-            let valid = email_regexp.test(email.value);
-            if(!valid)
-            {
-                alert("You have entered an invalid email address!");
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-    </script>
-    <script>
-        function cardExpiration() {
-            let expiry_month = document.forms["myForm"]["date"].value;
-            let expiry_year = document.forms["myForm"]["date"].value;
-            //let expiry_month = document.getElementById("date").value;
-            //let expiry_year = document.getElementById("date").value;
-            let today = new Date();
-            let selDate = new Date();
-            if (today.getTime() > selDate.setFullYear(expiry_month, expiry_year)) {
-                alert("expiry month and year is before today month and year.");
-                document.date.focus();
-                return false;
-            } else {
-                alert("it is fine");
-                document.date.focus();
-                return true;
-            }
-        }
-    </script>
-    <script>
-        function formDataIsValid()
-        {
-            let form_is_valid  = true;
-            if (!requiredField()) {
-                form_is_valid  = false;
-            }
-            if (!ValidateEmail()) {
-                form_is_valid  = false;
-            }
-            if(!cardExpiration()){
-                form_is_valid = false;
-            }
-            return form_is_valid;
-        }
-
-    </script>
 </head>
 <body>
 <script src="../js/header.js"></script>
 
-
+<!--create div "content"-->
 <div class="content">
     <div class="container">
         <h2 style="color:red;">Pick up in Hamilton</h2>
-        <form name="myForm" action="/action_page.php" onsubmit="return formDataIsValid()" method="post">
+        <form name="myForm" onSubmit="return false" >
             <div class="customer">
                 <h3 style="text-align: center">customer information</h3>
                 <div class="roww">
@@ -284,7 +43,7 @@
                         <lable for="email">email Address</lable>
                     </div>
                     <div class="dropdown">
-                        <input type="text" name="email" value="email">
+                        <input type="text" id="email" name="email" value="email">
                         <div class="dropdown-content">
                             <p > Email must be correct as it will
                                 be used to send booking confirmation</p>
@@ -297,7 +56,7 @@
                         <lable for="tel">contact number</lable>
                     </div>
                     <div class="col-75">
-                        <input  type="tel" name="tel">
+                        <input  type="tel" id="tel" name="tel">
                     </div>
                 </div>
                 <div class="roww">
@@ -309,8 +68,8 @@
                             <option value="deli" >delivery</option>
                             <option value="pick">pickup</option>
                         </select>
-                        <div class="dropdown-content">
-                            <h5 id="Total"> Total Cost: ...$</h5>
+                        <div class="dropdown-content" >
+                            <h5 id="Total" onclick="calculate Total price()"> Total Cost: ...$</h5>
                         </div>
                     </div>
                 </div>
@@ -323,6 +82,7 @@
                     </div>
                 </div>
             </div>
+            <!--follow by content of payment-->
             <div class="payment">
                 <h3 style="text-align: center">Payment</h3><br/>
                 <div class="roww">
@@ -330,7 +90,7 @@
                         <lable for="name">name</lable>
                     </div>
                     <div class="col-75">
-                        <input type="text" name="name">
+                        <input type="text" id="name" name="name">
                     </div>
                 </div>
                 <div class="roww">
@@ -338,7 +98,7 @@
                         <lable for="card number">card number</lable>
                     </div>
                     <div class="col-75">
-                        <input  type="number" name="card number">
+                        <input  type="number" id="number"name="card number">
                     </div>
                 </div>
                 <div class="roww">
@@ -346,7 +106,7 @@
                         <lable for="cvv" >cvv</lable>
                     </div>
                     <div class="col-75">
-                        <input  type="cvv" name="cvv">
+                        <input  type="cvv" id="cvv"name="cvv">
                     </div>
                 </div>
                 <div class="roww">
@@ -354,15 +114,15 @@
                         <lable for="date">card expiration date</lable>
                     </div>
                     <div class="col-75">
-                        <input type="date" name="date">
+                        <input type="date" id="date" name="date">
                     </div>
                 </div>
             </div>
             <div class="button">
                 <div class="roww">
-
+                    <!--reset burton dnd submit burton-->
                     <input type="reset" style="width:160px;" value="reset">
-                    <input type="submit" style="width:160px;" value="submit"  >
+                    <input type="submit" style="width:160px;" value="submit" onclick="formDataIsValid();"  >
                 </div>
             </div>
         </form>
@@ -371,7 +131,9 @@
 </div>
 
 
+
 </body>
-<div ><script src="../js/footer.js"></script></div>
+
+<script src="../js/footer.js"></script>
 
 </html>

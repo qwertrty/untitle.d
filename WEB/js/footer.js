@@ -9,7 +9,6 @@ document.write('<footer>   <div class="footer" id="contact" name="contact">\n' +
     '                                <h2>For more information contact us</h2>\n' +
     '                                <p href="#"><i class="fa fa-map-marker-alt">&nbsp;&nbsp;Map</i></p>\n' +
     '                                <p href="https://www.wintec.ac.nz/"><i class="fa fa-envelope"></i>wintec.ac.nz</p>\n' +
-    '                               <p href=""><i class="fa fa-envelope"></i>©2022 - Seafood</p>\n'+
     '                            </div>\n' +
     '                        </div>\n' +
     '                        <!-- go back link -->\n' +

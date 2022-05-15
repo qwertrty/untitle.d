@@ -5,115 +5,14 @@
     <title>Title</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
-   <style>
-       *{
-           box-sizing:border-box;
-       }
-       body{
-           font-family:Arial;
-           padding:10px;
-           background-color: #f1f1f1;
-           margin: 0;
-       }
-       .header h1{
-           font-family:sofia,sens-serif;
-           font-size:50px;
-           position:relative;
-           left:200px;
-           top:80px;
+    <link href="../css/aboutus.css" rel="stylesheet">
 
-       }
-       ul{
-           list-style-type:none;
-           margin:0;
-           padding:0;
-           overflow:hidden;
-           background-color:black;
-
-       }
-       li{
-           float:right;
-       }
-       li a{
-           display:inline-block;
-           color:white;
-           text-align:center;
-           padding:14px 16px;
-           text-decoration:none;
-       }
-       li a:hover{
-           background-color: #111;
-       }
-       .container{
-
-           width:100%;
-           margin-top: 5px;
-           padding: 10px;
-           background-color:darkred;
-       }
-       .container1{
-           display:flex;
-           flex-wrap:wrap;
-           margin-bottom: -100px;
-       }
-       .column1{
-           flex:25%;
-           max-width:25%;
-           padding:0 4px;
-       }
-       .column1 img{
-           margin-top:5px;
-           vertical-align:middle;
-           opacity:0.7;
-
-       }
-       .column1 img:hover{
-           opacity:1.0;
-       }
-       .staff{
-           margin-top: 0px;
-       }
-       .information{
-           display:none;
-           background-color: coral;
-           box-shadow: 10px 10px 5px lightblue;
-           border-radius: 15px;
-           width:150px;
-           padding:12px 16px;
-       }
-       .staff:hover .information{
-           display:inline-block;
-       }
-       .content:after {
-           content: "";
-           display: table;
-           clear: both;
-       }
-       .roww{
-           display:flex;
-           justify-content:space-around;;
-           margin-top: 5px;
-           background: green;
-           wight:100%;
-           height:230px;
-           padding:10px;
-       }
-       .roww>div{
-           background-color: dodgerblue;
-           margin:10px;
-           padding: 10px;
-           font-size: 10px;
-           justify-content: center;
-       }
-       .content{
-           margin-top:230px;
-       }
-   </style>
 </head>
 <body>
 <script src="../js/header.js"></script>
 <div class="content">
     <div class="container1">
+        <!-- display picture of us works and daily -->
         <div class="column1">
             <img src="https://lh3.googleusercontent.com/jwqhaxfSgprYMx3Qot7jhFWa_5lo5mjoEejy9LAE9LnmqXxaBii34BrvNRYnMQ9sjyJWGydR10YFepwNmaEvk9onmV3MLtjKJyXys1Ml11yPX8MMYrVYecSuJ13Ds7DNi0Ehq0-B29gqAgU4Q2cl2-WHeRQqoQinAGrGqB4v4sSI-ro3b2EYMv2dte6CO3CghCjIz3MIzpRrxLYv2mew9UZVR_Tb8pNx8aYGUwAH5mqYBmRzW5g-rH4F_AyGd_mvHuJ8mnSgKgN-8VxV5O2rGP-MRujM-lmTJU1CTrHYFYeMQVLkHjkp7310RghQhZxosKgiKjtVTIj9U8NzAinW8igcpxGtHZbdhYZ3HKxzkC2-0hxyPoH-o2teyLK7NNQpilLvMZZsfZJ4StVfbhgPD7uMQE-gzTwa0NGTqSf0wO_tXgQA3d9V-PsOcKo-pKWffIIuMc6UQATtZTCLbebmRkpf7ZEWko5gAMB1In63ExlRquk28NqNRHmsmQ5-_CL95LaRkh4ih7dW3wyiOQzONbMVA_tnOMhfpNeRFgW2qmUiekH7vdWeaNvXIupqqyZFkRNZ0sLLbfPrECsRtSI2itXicjsz3-Dv_HP9I-I6PEwmqa3nDvK5TSLg8e7Ww4g0W1CLv1G5o6IKncMNUaUmeuDd7YxXd_pNeEIYd_3uVsQYZJdnj-2808Qh05arFngD7c1QHMxT0iKrW-9NsZbjCsULG43LczCu8_qIIiG2xe74A8TimUe7ZvN1BVguMw=w773-h568-no?authuser=0" alt="img" style="width:100%">
             <img src="https://lh3.googleusercontent.com/WvSR7HEanYVAKAH7aSDjWamczXg-HoKDPeH3CFHogNT1-GMR8pObDi8sHvXUdDNCf-8K6eQKxRn0RSu5VDXXl9WTZudzFzuVkeap5ZOXw4fAdzK_E24YrYQF-1ddGW0Nwxxh6IbV-wvUN4M_1J8qcdUgINmHg92nDhqoRSsBo9TefH0t8_QJQ235uZq7hSyJg37sgmA-O7H7-GnnDlddyIMdmiholb9oG3BxDVPkSRrfif0OC8mTB76dDjJLZifQ6O9LkknUHdeJWYatcq_MrELjkPGYUIbYmj-LhXUn92cWp-lWjai_UJ10zdD3dFfahpGcCPjwv6dXeqaoEl7r4APUosEk9ie95H_8IeE5JYv1_hxSjjOuevfA6wfGk7ScnuHQhRl15teuFtzsU6QJIked5-Vg1UV6CNtK_JbIXKjjeDdwfGszxm5Jcf-a2n-MNl5bYnOU4PCeeuT9nwSwIJmbeVsqAkH7oQpEdwaYhK9LY9N2MB61ypOVQS1pSnIzV_eczeExiNDNBXQLXrW7dDeLZWpgT_PnHMLZhgMP3aG0q8BWOSWz51810AROIFuGLlSzrBOYL8x0dcsqL2Mn9mWwjcDAVdH6_e3YUMlalv-Udx8qWX3NGWSAuUflpAkK7Lle1hCDqDGPz_YTsqVzdw0nblBnr5Jav-XZesw1SuD40UPZukUZ0QoNGSyB3gZe42l87skHmMU6kdCR3sS-oBjqmkeLysTctWEXNRXq8mrY-qDI7sFMfvE4VcNPfw=w270-h187-no?authuser=0" style="width:100%">
@@ -153,6 +52,7 @@
     <div class="container">
         <h3>Staff members</h3>
         <div class="roww">
+              <!--display staff information like photo and introduction-->
             <div class="staff"><img src="https://attachments.office.net/owa/yuxlix86%40student.wintec.ac.nz/service.svc/s/GetAttachmentThumbnail?id=AAMkADIzMjcyOWQ2LWVkZjgtNDQyNy05MTRmLTRlMjIxYmU0YzFjYQBGAAAAAAD3xYfxYCL1RIvssyLNkGiGBwAAjfpXBb81SqMmBSRce6fxAAAAAAEMAAAAjfpXBb81SqMmBSRce6fxAAEmho1ZAAABEgAQAP9ApqhnUblMk%2FZclsOiV2E%3D&thumbnailType=2&token=eyJhbGciOiJSUzI1NiIsImtpZCI6IkZBRDY1NDI2MkM2QUYyOTYxQUExRThDQUI3OEZGMUIyNzBFNzA3RTkiLCJ0eXAiOiJKV1QiLCJ4NXQiOiItdFpVSml4cThwWWFvZWpLdDRfeHNuRG5CLWsifQ.eyJvcmlnaW4iOiJodHRwczovL291dGxvb2sub2ZmaWNlLmNvbSIsInVjIjoiMzRmMWU3NGFjNWM1NDZlNDhjZjkxODgwNWU2NDRmMWMiLCJzaWduaW5fc3RhdGUiOiJbXCJrbXNpXCJdIiwidmVyIjoiRXhjaGFuZ2UuQ2FsbGJhY2suVjEiLCJhcHBjdHhzZW5kZXIiOiJPd2FEb3dubG9hZEA2YWEzZDgyZS0zN2JmLTRlYzctYTEwNy02ODhhZDg3M2Q5YWYiLCJpc3NyaW5nIjoiV1ciLCJhcHBjdHgiOiJ7XCJtc2V4Y2hwcm90XCI6XCJvd2FcIixcInB1aWRcIjpcIjExNTM4MDExMTgyNjk4NjU5MDFcIixcInNjb3BlXCI6XCJPd2FEb3dubG9hZFwiLFwib2lkXCI6XCJjZTUyNTJkZi1iOTU1LTQ0MDUtYTQyMC04ZmQxNzNmYTg1YTVcIixcInByaW1hcnlzaWRcIjpcIlMtMS01LTIxLTE2NjQ4ODk2NTktODY4NjA4Njg4LTEyNjcxMzE3NzUtMzM5Mzc0NjZcIn0iLCJuYmYiOjE2NTE0NjAwNjUsImV4cCI6MTY1MTQ2MDY2NSwiaXNzIjoiMDAwMDAwMDItMDAwMC0wZmYxLWNlMDAtMDAwMDAwMDAwMDAwQDZhYTNkODJlLTM3YmYtNGVjNy1hMTA3LTY4OGFkODczZDlhZiIsImF1ZCI6IjAwMDAwMDAyLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMC9hdHRhY2htZW50cy5vZmZpY2UubmV0QDZhYTNkODJlLTM3YmYtNGVjNy1hMTA3LTY4OGFkODczZDlhZiIsImhhcHAiOiJvd2EifQ.gnqg-WBBfHIbE5QNdU4qtPiylSL-sgro063kDKzZ96dFpE6MGUYUsbaM31QwJKV90PlWpaLa8xPxGCI9m-k2VhP5l9TryjqXUiQt1BzJeeVt3OT1gaFuEdHS0lU1SzLKRe-OXPHW_7d86sNapJZ1a9G3-vOh8qxy80fMugn7kPn0DzLZHSRNgxM_-abBGDBxdwedCe0qbLeGR6R0CmwNBBCBdCf5ZALXe-M6Vvj1BvbfwBaCLWF9pbJ3-SmxPTxw8FTguJoTYqhXO3tdCVnLLGOi2aqIo6Z3MtfDH7Jhm15CnubO8tmObeD7HobWTA2IiYlqWD4Jq08Ju9pCUaDnBg&X-OWA-CANARY=GJAUHBYT1E20WKyQkM1luQBxNlrnK9oY2WBpKhlhVDe6exyVDoCm_v-V36uBH56EQJtLrS4wQIU.&owa=outlook.office.com&scriptVer=20220408004.16&animation=true"alt="yu"width="200" height="180">
                 <div class="information"><p>“Hello, my name is Randika Sirimanne, I am web developer, my hobby is playing games, and watching videos, it’s a pleasure to work with this company and I can’t wait to see what lays ahead in the future."</p></div>
             </div>
@@ -175,5 +75,5 @@
 
 
 </body>
-<div ><script src="../js/footer.js"></script></div>
+<script src="../js/footer.js"></script>
 </html>
