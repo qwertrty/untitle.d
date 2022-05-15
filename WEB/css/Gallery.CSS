@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial;
+
+  }
+  
+.title {
+    text-align: center;
+    padding: 60px 100px;
+    text-align: center;
+    color: #1d2434;
+    font-size: 48px;
+    font-family:'Sedgwick Ave Display',sans-serif;
+    margin-top: 200px;
+
+}
+
+.image_gird{  
+    position: adsolute;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 100pw;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,300px));
+    column-gap: 10px;
+    row-gap: 10px;
+}
+.image_gird img {
+    width: 300px;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+}
+
