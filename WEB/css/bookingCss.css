@@ -3,11 +3,11 @@
 }
 body{
     font-family:Arial;
-    padding:0;
+    padding:10px;
     background-color: #f1f1f1;
-    magin:15px;
-
+    margin: 0;
 }
+
 
 .header h1{
     font-family:sofia,sens-serif;
