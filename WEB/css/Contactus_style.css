@@ -3,18 +3,16 @@
 body{
   font-family:Arial;
   padding:10px;
-  background-color: #f1f1f1;
+  background-color: white;
   margin: 0;
 }
-
-
 /*Map and the Contact information*/
 
 .Contact_Info{
   position: relative;
   width: 100;
   margin-top: 250px;
-  background: #f1f1f1;
+  background: white;
   overflow: hidden;
 }
 
