@@ -1,0 +1,97 @@
+
+
+body{
+  font-family:Arial;
+  padding:10px;
+  background-color: white;
+  margin: 0;
+}
+/*Map and the Contact information*/
+
+.Contact_Info{
+  position: relative;
+  width: 100;
+  margin-top: 250px;
+  background: white;
+  overflow: hidden;
+}
+
+h1{
+  text-align: center;
+  color: #1d2434;
+  font-size: 40px;
+  font-family:'Sedgwick Ave Display',sans-serif;
+}
+
+.Contact_Info .Map{
+  position: relative;
+  float: left;
+  left: 4%;
+}
+
+.Contact_Info .Lines{
+  position: relative;
+  float: left;
+  left: 9%;
+  color: #000000;
+  font-size: 23px;
+}
+/*End*/
+
+/* Feebback Form */
+.Feebback{
+  position: relative;
+  border-radius: 10px;
+  background-color: gray;
+  padding: 15px;
+  width:40%;
+  overflow: hidden;
+  left: 20%;
+  bottom: 45px;
+  top:1px;
+
+}
+label{
+  font-size:130% ;
+  font-family: 'Roboto', sans-serif
+
+}
+
+input[type=text], select{
+  width: 100%;
+  padding: 5px;
+  margin: 4px;
+  box-sizing: border-box;
+  
+}
+input[type=email], select{
+  width: 100%;
+  padding: 5px;
+  margin: 4px;
+  box-sizing: border-box;
+}
+
+textarea{
+  width: 100%;
+  height: 150px;
+  padding: 12px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: white;
+}
+
+input[type=submit]{
+  float: left;
+  padding: 8px 19px ;
+  border: none;
+  border-radius: 4px;
+  background-color: white;
+  color: black;
+}
+
+input[type=submit]:hover{
+  background-color: lightgray;
+
+}
+
+/*End*/
